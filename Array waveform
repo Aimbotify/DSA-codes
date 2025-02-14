@@ -1,0 +1,30 @@
+func WaveArray(arr []int) { 
+  
+  size := len(arr)
+  newArr := make([]int,size)
+  for i:=0;i<size;i++{
+    newArr[i]=arr[i]
+  }
+  for i := 0; i <= len(arr)-1; i++ {
+      for j := 0; j < len(arr)-1-i; j++ {
+         if arr[j] > arr[j+1] {
+            arr[j], arr[j+1] = arr[j+1], arr[j]
+         }
+      }
+   }
+  j:=size/2
+  k:=1
+  for i:=0;i<j;i++ {
+    newArr[k] = arr[i]
+    k = k+2
+   }
+  l:=0
+  for i:=j;i<size;i++{
+    newArr[l] = arr[i]
+    l = l+2
+   }
+  for i:=0;i<size;i++{
+    arr[i]=newArr[i]
+  }
+  
+}
