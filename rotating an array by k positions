@@ -1,0 +1,23 @@
+func RotateArray(data []int, k int) {
+	size := len(data)
+	firstPart := make([]int, k)    
+	secondPart := make([]int, size-k) 
+	newArr := make([]int, size)       
+
+	for i := 0; i < k; i++ {
+		firstPart[i] = data[i]
+	}
+	for i := k; i < size; i++ {
+		secondPart[i-k] = data[i] 
+	}
+
+	j := size - k
+	for i := 0; i < j; i++ {
+		newArr[i] = secondPart[i]
+	}
+	for i := j; i < size; i++ {
+		newArr[i] = firstPart[i-j] 
+	}
+
+	
+}
