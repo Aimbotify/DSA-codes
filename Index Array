@@ -1,0 +1,17 @@
+func indexArray(arr []int, size int) {
+  newArr := make([]int,size)
+  for i:=0;i<size;i++{
+    for j:=0;j<size;j++{
+      if (arr[j]==i){
+        newArr[i]=i
+        break;
+      } else {
+        newArr[i]=-1
+      }
+    }
+  }
+  for i:=0;i<size;i++{
+    arr[i]=newArr[i]
+  }
+  fmt.Println(arr)
+}
